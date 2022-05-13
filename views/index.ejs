@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>To Do List</title>
 </head>
+
 <body>
-    <h1><%= TodaysDay %></h1>
+    <h1 class="box" id="heading">
+        <%= TodaysDay %>
+    </h1>
+
+    <ul class="box">
+        <li class="item">Buy Food</li>
+        <li class="item">Cook Food</li>
+        <li class="item">Eat Food</li>
+
+        <% for(var i=0; i<UpdatedItems.length;i++){ %>
+            <li class="item">
+                <%= UpdatedItems[i] %>
+            </li>
+            <% } %>
+
+                <form action="/" method="post" class="item">
+                    <input type="text" name="newItem" placeholder="newitem">
+                    <button type="submit" name="button">+</button>
+                </form>
+    </ul>
+
+
 </body>
+
 </html>
